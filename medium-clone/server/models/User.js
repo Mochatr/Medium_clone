@@ -8,6 +8,7 @@ const userSchema = new Schema(
         provider_id: String,
         token: String,
         provider_pic: String,
+        
         followers: [
             {
                 type: Schema.Types.ObjectId,
@@ -31,4 +32,5 @@ userSchema.methods.follow = function(user_id) {
 userSchema.methods.addFollower = function(fs) {
     this.followers.push(fs)
 }
+
 export default model('User', userSchema);
